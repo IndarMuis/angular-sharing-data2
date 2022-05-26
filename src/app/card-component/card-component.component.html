@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-subtitle>
+      Age : {{ age }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="imagePath" [alt]="imagePath">
+  <mat-card-content>
+    <p>{{ company }}</p>
+    <p>{{ address }}</p>
+    <p>{{ phone }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+     mat-button style="background-color:blue;
+     color:white" (click)="counterIndex()">
+     LIKE <mat-icon>favorite</mat-icon>
+    </button>
+
+    <strong> {{ index }} LIKES </strong>
+  </mat-card-actions>
+</mat-card>
