@@ -22,14 +22,7 @@
   <div class="row">
     <div class="col-lg-4" *ngFor="let data of listPerson">
       <app-card-component
-       [name]="data.name" 
-       [age]="data.age" 
-       [name]="data.name" 
-       [company]="data.company"
-       [phone]="data.phone" 
-       [imagePath]="data.picture" 
-       [address]="data.address"
-       [index]="data.index"
+       [dataCard]="data"
        (countLike)="countLikeHandler()">
       </app-card-component>
         <hr>

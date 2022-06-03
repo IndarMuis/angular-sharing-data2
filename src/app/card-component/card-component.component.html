@@ -1,23 +1,23 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>{{ name }}</mat-card-title>
+    <mat-card-title>{{ dataCard.name }}</mat-card-title>
     <mat-card-subtitle>
-      Age : {{ age }}
+      Age : {{ dataCard.age}}
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="imagePath" [alt]="imagePath">
+  <img mat-card-image [src]=" dataCard.imagePath " [alt]=" dataCard.name ">
   <mat-card-content>
-    <p>{{ company }}</p>
-    <p>{{ address }}</p>
-    <p>{{ phone }}</p>
+    <p>{{ dataCard.company}}</p>
+    <p>{{ dataCard.address}}</p>
+    <p>{{ dataCard.phone }}</p>
   </mat-card-content>
   <mat-card-actions>
     <button
      mat-button style="background-color:blue;
-     color:white" (click)="counterIndex()">
+     color:white" (click)="triggerLikeData()" >
      LIKE <mat-icon>favorite</mat-icon>
     </button>
 
-    <strong> {{ index }} LIKES </strong>
+    <strong> {{ dataCard.likeTotal }} LIKES </strong>
   </mat-card-actions>
 </mat-card>

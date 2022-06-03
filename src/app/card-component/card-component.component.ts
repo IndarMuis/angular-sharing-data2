@@ -1,25 +1,23 @@
+import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DataCard } from './data-card.interface';
+
+
+
 
 @Component({
   selector: 'app-card-component',
   templateUrl: './card-component.component.html',
   styleUrls: ['./card-component.component.css']
 })
-export class CardComponentComponent {
+export class CardComponentComponent{
+  @Input() dataCard!: DataCard;
 
-  @Input() index = 0;
-  @Input() imagePath = "";
-  @Input() age = 0;
-  @Input() name = "";
-  @Input() company = "";
-  @Input() phone = "";
-  @Input() address = "";
+  @Output() likeClicked =  new EventEmitter<number>();
 
-  @Output() countLike: EventEmitter<number> = new EventEmitter();
-  
-  counterIndex() {
-    this.index++;
-    this.countLike.emit(this.index);
+  triggerLikeData() {
+    this.dataCard.likeTotal++
+    this.likeClicked.emit(this.dataCard.likeTotal)
   }
 
 }
